@@ -1,0 +1,5 @@
+config/
+bin/
+obj/
+azure-functions-core-tools/
+.env
