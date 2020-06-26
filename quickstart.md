@@ -18,7 +18,7 @@ azure-create-central.png.
 
 Before we do anything else in IoT Central, we need to create an IoT Edge Deployment manifest.  This will become the basis for our Device Template inside of Central. In this repo you can find a [production deployment manifest _template_](./deployment.production.template.json) which will serve as the base and be rendered into a final deploymenmt manifest.
 
-###### Settings
+##### Settings
 
 In this template there's a few options to note:
 
@@ -37,7 +37,7 @@ Under the opcToDtdl section there are four environment varialbes you can configu
 
 Each of these parameters is optional.
 
-##### Generating the manifest
+#### Generating the manifest
 
 To generate the deployment manifest simply run: `iotedgedev genconfig -f deployment.production.template.json` and a manifest will output to the `config/` directory
 
