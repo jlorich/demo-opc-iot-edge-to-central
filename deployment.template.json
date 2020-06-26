@@ -100,7 +100,9 @@
               "image": "${MODULES.opcToDtdl}",
               "createOptions": {
                 "Env": [
-                  "DefaultApplicationUri=Site01"
+                  "DefaultApplicationUri=Site01",
+                  "NodeIdRegex=#s=\\([a-zA-Z0-9_\\.]+\\)",
+                  "ApplicationUriRegex=Site01"
                 ]
               }
             }
