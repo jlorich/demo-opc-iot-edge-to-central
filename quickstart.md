@@ -110,3 +110,9 @@ provisioning:
 ```
 
 After that run `sudo iotedge restart` and your device should start to pull down containers and write data to IoT Central!
+
+### 9. Visualize!
+
+Once the data starts flowing in you can jump over to the dashboards tab and start creating visualizations! Simple hit new, select your device group, select the devices you want to see and data you want to display and hit `Add Tile`
+
+![connect device](./images/iotc-dashboard.png)
