@@ -70,17 +70,45 @@
                 }
               }
             },
+            "opcSimulator": {
+              "type": "docker",
+              "status": "running",
+              "restartPolicy": "never",
+              "settings": {
+                "image": "nodered/node-red:latest",
+                "createOptions": {
+                  "ExposedPorts": {
+                    "4840/tcp": {}
+                  },
+                  "HostConfig": {
+                    "Binds": [
+                        "/opc:/data"
+                    ],
+                    "PortBindings": {
+                      "1880/tcp": [
+                        {
+                          "HostPort": "1880"
+                        }
+                      ],
+                      "4840/tcp": [
+                        {
+                          "HostPort": "4840"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
             "opcToDtdl": {
               "type": "docker",
               "status": "running",
               "restartPolicy": "never",
               "settings": {
-                "image": "azureiotgbb/opc-publisher-to-dtdl:latest",
+                "image": "${MODULES.opcToDtdl}",
                 "createOptions": {
                   "Env": [
-                    "DefaultApplicationUri=Site01",
-                    "NodeIdRegex=#s=\\([a-zA-Z0-9_\\.]+\\)",
-                    "ApplicationUriRegex=Site01"
+                    "DefaultApplicationUri=Site01"
                   ]
                 }
               }
