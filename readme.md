@@ -4,7 +4,7 @@ Many factories have devices that speak [OPC-UA](https://opcfoundation.org/about/
 
 This repo shows a reference implementation for connecting OPC-Servers to [IoT Edge](https://azure.microsoft.com/en-us/services/iot-edge/) and then passing data up to IoT Central.
 
-Setting all of this up end-to-end is a fairly simple process so be sure to follow the [Quickstart guide](./quickstart.md) to get going. 
+Setting all of this up end-to-end is a fairly simple process so **be sure to follow the [Quickstart guide](./quickstart.md) to get going.**
 
 
 ## IoT Edge Modules
