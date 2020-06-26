@@ -91,7 +91,7 @@ Now that your template has been published you can find it under the Devices menu
 
 Under your new device choose the connect button to get your devices connection information.
 
-![connect device(./images/iotc-conenct-device.png)
+![connect device](./images/iotc-conenct-device.png)
 
 This information can now be added to your IoT Edge Device configuration found on the device at `/etc/iotedge/config.yaml`
 
