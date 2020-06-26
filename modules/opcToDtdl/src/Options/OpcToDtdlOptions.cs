@@ -7,5 +7,6 @@ namespace MicrosoftSolutions.IoT.Edge.OpcToDtdl.Options
     {
         public string NodeIdRegex { get; set; } = "#s=([a-zA-Z0-9_\\.]+)";
         public string ApplicationUriRegex { get; set; } = "(.*)";
+        public string DefaultApplicationUri { get; set; } = "";
     }
 }

@@ -105,8 +105,12 @@
               "status": "running",
               "restartPolicy": "never",
               "settings": {
-                "image": "azureiotgbb/opc-publisher-to-dtdl",
-                "createOptions": {}
+                "image": "${MODULES.opcToDtdl}",
+                "createOptions": {
+                  "Env": [
+                    "DefaultApplicationUri=Site01"
+                  ]
+                }
               }
             }
           }

@@ -30,7 +30,7 @@ namespace MicrosoftSolutions.IoT.Edge.OpcToDtdl.Functions
         }
 
         /// <summary>
-        ///  Azure Functions entrypoint for handling OPC-UA to DTDL message conversion
+        ///  Azure Functions entrypoint for handling OPC-UA to DTDL message conversion.
         /// </summary>
         /// <param name="message">The OPC-UA JSON Message recieved</param>
         /// <param name="output">The IoT Edge Hub output to write to</param>
@@ -63,7 +63,13 @@ namespace MicrosoftSolutions.IoT.Edge.OpcToDtdl.Functions
             var dict = (IDictionary<string, object>)dtdlMessage;
             
             dict.Add("NodeId", ParseNodeId(opcMessage.NodeId));
-            dict.Add("ApplicationUri", ParseApplicationUri(opcMessage.ApplicationUri));
+            
+            if (string.IsNullOrEmpty(opcMessage.ApplicationUri)) {
+                dict.Add("ApplicationUri", _Options.DefaultApplicationUri);
+            } else {
+                dict.Add("ApplicationUri", ParseApplicationUri(opcMessage.ApplicationUri));
+            }
+            
             dict.Add("Status", opcMessage.Status);
             dict.Add("SourceTimestamp", opcMessage.Value.SourceTimestamp);
             dict.Add(opcMessage.DisplayName, opcMessage.Value.Value);

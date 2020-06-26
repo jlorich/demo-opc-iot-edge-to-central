@@ -98,7 +98,11 @@
             "restartPolicy": "never",
             "settings": {
               "image": "${MODULES.opcToDtdl}",
-              "createOptions": {}
+              "createOptions": {
+                "Env": [
+                  "DefaultApplicationUri=Site01"
+                ]
+              }
             }
           }
         }

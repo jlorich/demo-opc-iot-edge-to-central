@@ -22,9 +22,10 @@ namespace MicrosoftSolutions.IoT.Edge.OpcToDtdl
             var configurationBuilder = new ConfigurationBuilder();
             
             // configurationBuilder.AddJsonFile("local.settings.json");
-            // configurationBuilder.AddEnvironmentVariables();
+            configurationBuilder.AddEnvironmentVariables();
             
             var configuration = configurationBuilder.Build();
+
             builder.Services.Configure<OpcToDtdlOptions>(configuration);
         }
     }
