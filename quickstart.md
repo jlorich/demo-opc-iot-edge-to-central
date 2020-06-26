@@ -1,12 +1,12 @@
 # OPC-UA to IoT Central QuickStart Guide
 
-#### 0. Prerequisites
+### 0. Prerequisites
 
 Before getting started, make sure you have [IoT Edge installed](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux).  This is where all our Edge modules will run. In production this box will need network visibility to the OPC Server.
 
 Also install the [IoT Edge Dev Tool](https://github.com/Azure/iotedgedev), or utilize the provided [VS Code Dev Container](https://code.visualstudio.com/docs/remote/containers).
 
-#### 1. Create an IoT Central Application
+### 1. Create an IoT Central Application
 
 From the [Azure Portal](https://portal.azure.com) create a new IoT Central Application.  To determine which type of plan to select please review the [different tiers](https://azure.microsoft.com/en-us/pricing/details/iot-central/).
 azure-create-central.png.
@@ -14,7 +14,7 @@ azure-create-central.png.
 ![Create an IoT Central Application](./images/azure-create-central.png)
 
 
-#### 2. Generate a deployment manifest
+### 2. Generate a deployment manifest
 
 Before we do anything else in IoT Central, we need to create an IoT Edge Deployment manifest.  This will become the basis for our Device Template inside of Central. In this repo you can find a [production deployment manifest _template_](./deployment.production.template.json) which will serve as the base and be rendered into a final deploymenmt manifest.
 
@@ -45,7 +45,7 @@ To generate the deployment manifest simply run:
 
 and a manifest will output to the `config/` directory
 
-#### 3. Construct a Device Template
+### 3. Construct a Device Template
 
 Inside the IoT Central application Select "Device Templates" and choose IoT Edge:
 
@@ -55,13 +55,13 @@ On the customize page give your Device Template a name, and then choose your gen
 
 After reviewing click create to create your device template.
 
-#### 4. Remove the opcPublisher module definition
+### 4. Remove the opcPublisher module definition
 
 Since the only module that emits data to the cloud is the `opcToDtdl` module, we need first need to delete the `opcPublisher` module from the pre-created template.  IoT Central will keep the underlying deployment manifest the same (so the `opcPublisher` *will* deploy), but it serves no purpose in the Central template.
 
 ![Delete publisher module](./images/iotc-delete-opc-pub.png)
 
-#### 5. Configure the opcToDtdl Interface
+### 5. Configure the opcToDtdl Interface
 
 Now choose the `opcToDtdl` module and choose add interface.  This is where we'll define what types of telemetry we expect to see in IoT Central.
 
@@ -75,19 +75,19 @@ Then add new Capabilities for each tag you want to be able to be displayed in Io
 
 ![new capability](./images/iotc-new-capability.png)
 
-#### 6. Publish your device template
+### 6. Publish your device template
 
 Once all capabilities have been added, choose Publish on the Device template menu.
 
 ![publish device template](./images/iotc-publish-device-template.png)
 
-#### 7. Create a device
+### 7. Create a device
 
 Now that your template has been published you can find it under the Devices menu.  Within here you can create a new device.
 
 ![create device(./images/iotc-new-device.png)
 
-#### 8. Connect your device
+### 8. Connect your device
 
 Under your new device choose the connect button to get your devices connection information.
 
