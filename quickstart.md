@@ -85,7 +85,7 @@ Once all capabilities have been added, choose Publish on the Device template men
 
 Now that your template has been published you can find it under the Devices menu.  Within here you can create a new device.
 
-![create device(./images/iotc-new-device.png)
+![create device](./images/iotc-new-device.png)
 
 ### 8. Connect your device
 
